@@ -33,7 +33,6 @@ jobs:
 
     - name: Generate HTML report
       if: always()
-      run: npx playwright show-report --host 0.0.0.0 || true
 
     - name: Upload test results
       if: always()

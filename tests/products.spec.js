@@ -18,7 +18,7 @@ test.describe("Product Tests", () => {
     await product.selectProduct();
     await product.addToCart();
     await product.validateProductDescriptionIsVisible();
-    await product.validatePriceIsVisible("$");
+    await product.validatePriceIsVisible();
     await product.clickCartIcon();
     await product.clickCheckoutButton();
     await product.fillInfoAndContinue("User", "Random", "12345");

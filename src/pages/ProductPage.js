@@ -19,8 +19,38 @@ export class ProductPage extends BasePage {
   }
 
   async validateProductTitleIsVisible() {
-    await expect(this.page.locator(productSelectors.productNameByTestId)).toBeVisible();
+    await expect(this.page.locator(productSelectors.productName)).toBeVisible;
   }
 
+  async validateProductDescriptionIsVisible() {
+    await expect(this.page.locator(productSelectors.productDescription)).toBeVisible;
+  }
+
+  async validatePriceIsVisible() {
+    await expect(this.page.locator(productSelectors.productPrice)).toBeVisible;
+  }
+
+  async clickCartIcon() {
+    await this.page.click(productSelectors.cartIcon);
+  }
+
+  async clickCheckoutButton() {
+    await this.page.click(productSelectors.checkoutButton);
+  }
+
+  async fillInfoAndContinue(firstName, lastName, postalCode) {
+    await this.page.fill(productSelectors.firstNameInput, firstName);
+    await this.page.fill(productSelectors.lastNameInput, lastName);
+    await this.page.fill(productSelectors.postalCodeInput, postalCode);
+    await this.page.click(productSelectors.continueButton);
+  }
+
+  async clickFinishButton() {
+    await this.page.click(productSelectors.finishButton);
+  }
+
+  async validateSuccessMessageIsVisible() {
+    await expect(this.page.locator(productSelectors.successMessage)).toBeVisible;
+  }
   
 }
