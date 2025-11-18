@@ -17,6 +17,7 @@ O objetivo é garantir qualidade, estabilidade e facilidade de manutenção nos 
 - [Criando Novos Testes](#criando-novos-testes)
 - [Boas Práticas](#boas-práticas)
 - [Relatórios](#relatórios)
+- [GitHub Actions](gGitHub-actions)
 
 ---
 
@@ -284,3 +285,10 @@ O arquivo `playwright.config.js` contém as configurações principais:
 - **screenshot**: Captura de screenshots (only-on-failure)
 - **video**: Gravação de vídeos (retain-on-failure)
 - **reporter**: Formatos de relatório (HTML e lista)
+
+### GitHub Actions
+
+Cada execução do workflow `CI - Playwright Tests` publica o relatório HTML como artifact pelo step `Upload test results`. Para facilitar o acesso ao link de download do report após o Job finalizar, siga os passos abaixo:
+1. Acesse o run do GitHub Actions.
+2. Abra a aba **Summary** e clique no título “Playwright report” para ir direto ao artifact.
+3. Em **Artifacts**, clique em `playwright-report` para baixar o HTML completo dos testes.
